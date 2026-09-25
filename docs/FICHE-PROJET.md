@@ -1,10 +1,10 @@
-# [Nom du projet]
+# [Hors cadre]
 
 ## Type de produit
-[app mobile / web app / SaaS]
+[web app]
 
 ## En une phrase
-[Produit] aide [qui] à [faire quoi] sans [frustration actuelle].
+Une galerie de portraits de femmes méconnues pour informer et faire connaître à tout le monde, des femmes oubliées qui ont marquées l'histoire.
 
 ## Proto-persona (hypothèse, pas une recherche)
 - Qui : [âge, situation, à l'aise ou non avec le numérique]
