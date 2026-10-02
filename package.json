@@ -1,0 +1,6 @@
+{
+  "name": "design-system",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*", "apps/*"]
+}
