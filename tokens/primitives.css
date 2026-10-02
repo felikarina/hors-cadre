@@ -1,15 +1,43 @@
 /* Niveau 1 — primitives : valeurs brutes, AUCUNE intention.
    Jamais utilisées directement dans un composant. */
 :root {
-  /* TODO étape 1 : gamme de marque 50 → 900 */
-  --color-brand-600: #2952cc;
-  --color-brand-700: #1f3fa3;
+  /* --- Gamme de marque (violet) 50 → 900 --- */
+  --color-brand-50:  #f5f0ff;
+  --color-brand-100: #ece0ff;
+  --color-brand-200: #d9c2ff;
+  --color-brand-300: #bd97ff;
+  --color-brand-400: #9d5cff;
+  --color-brand-500: #7c3aed;
+  --color-brand-600: #6d28d9;
+  --color-brand-700: #5b21b6;
+  --color-brand-800: #4c1d95;
+  --color-brand-900: #2e1065;
 
-  /* TODO : neutres 0 → 900 */
-  --color-neutral-0: #ffffff;
+  /* --- (vert) 50 → 900 --- */
+  --color-accent-50:  #f0fdf4;
+  --color-accent-100: #dcfce7;
+  --color-accent-300: #86efac;
+  --color-accent-500: #22c55e;
+  --color-accent-600: #16a34a;
+  --color-accent-700: #15803d;
+  --color-accent-900: #14532d;
+
+  /* --- Neutres 0 → 900 --- */
+  --color-neutral-0:   #ffffff;
+  --color-neutral-50:  #fafafa;
+  --color-neutral-100: #f2f2f5;
+  --color-neutral-200: #e4e4ea;
+  --color-neutral-300: #c8c8d0;
+  --color-neutral-400: #9a9aa8;
+  --color-neutral-500: #6f6f80;
+  --color-neutral-600: #525261;
   --color-neutral-700: #3f4451;
+  --color-neutral-800: #26262e;
   --color-neutral-900: #171a21;
 
-  /* TODO : statuts (succès, alerte, erreur, info) */
-  --color-red-600: #c62828;
+  /* --- Statuts --- */
+  --color-success-600: #31bc07;
+  --color-warning-600: #d97706;
+  --color-red-600:      #c62828;
+  --color-info-600:     #0284c7;
 }

@@ -8,7 +8,11 @@
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-4: 1rem;
-  /* TODO étape 3 : --space-6, --space-8, --space-12, --space-16 */
+  --space-6:  1.5rem;   
+  --space-8:  2rem;     
+  --space-12: 3rem;    
+  --space-16: 4rem;     
+  --space-24: 6rem;
 
   /* TODO étape 4 : rayons, focus, ombres, durées */
   --radius-md: 8px;

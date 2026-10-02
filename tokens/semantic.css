@@ -1,15 +1,69 @@
 /* Niveau 2 — sémantiques : l'INTENTION. Ne référencent que des primitives. */
 :root {
-  --color-text-default: var(--color-neutral-900);
-  --color-text-subtle: var(--color-neutral-700);
-  --color-bg-default: var(--color-neutral-0);
-  --color-action-primary: var(--color-brand-600);
-  --color-action-primary-hover: var(--color-brand-700);
-  --color-text-on-action: var(--color-neutral-0);
-  --color-border-focus: var(--color-brand-600);
-  /* TODO étape 2 : text-inverse, bg-subtle, bg-danger, border-default… */
+  /* --- Texte --- */
+  --color-text-default:   var(--color-neutral-900);
+  --color-text-subtle:    var(--color-neutral-700);
+  --color-text-inverse:   var(--color-neutral-0);    
+  --color-text-brand:     var(--color-brand-700);      
+
+  /* --- Fonds --- */
+  --color-bg-default:     var(--color-neutral-0);      
+  --color-bg-subtle:      var(--color-brand-50);       
+  --color-bg-inverse:     var(--color-brand-900);      
+  --color-bg-danger:      var(--color-red-600);
+
+  /* --- Actions --- */
+  --color-action-primary:        var(--color-brand-600);   
+  --color-action-primary-hover:  var(--color-brand-700);
+  --color-action-secondary:      var(--color-accent-600);  
+  --color-action-secondary-hover: var(--color-accent-700);
+  --color-text-on-action:  var(--color-neutral-0);
+
+  /* --- Bordures --- */
+  --color-border-default:  var(--color-neutral-200);
+  --color-border-strong:   var(--color-brand-600);
+  --color-border-focus:    var(--color-accent-500);      
+  --color-border-danger:   var(--color-red-600);
+
+  /* --- Statuts --- */
+  --color-text-success:    var(--color-accent-700);
+  --color-bg-success:      var(--color-accent-100);
+
+  /* --- Composants --- */
+  --color-card:            var(--color-neutral-0);
+  --color-card-hover:      var(--color-brand-50);
 }
 
 /* TODO étape 6 : thème sombre — on ne redéfinit QUE les sémantiques */
 [data-theme="dark"] {
+  /* Texte */
+  --color-text-default:   var(--color-neutral-0);
+  --color-text-subtle:    var(--color-neutral-400);
+  --color-text-inverse:   var(--color-neutral-900);
+  --color-text-brand:     var(--color-brand-300);
+
+  /* Fonds */
+  --color-bg-default:     var(--color-neutral-900);
+  --color-bg-subtle:     var(--color-neutral-800);
+  --color-bg-inverse:     var(--color-brand-50);
+
+  /* Actions */
+  --color-action-primary:         var(--color-brand-400);
+  --color-action-primary-hover:   var(--color-brand-300);
+  --color-action-secondary:       var(--color-accent-300);
+  --color-action-secondary-hover:  var(--color-accent-500);
+  --color-text-on-action:  var(--color-neutral-900);    
+
+  /* Bordures */
+  --color-border-default:  var(--color-neutral-700);
+  --color-border-strong:   var(--color-brand-400);
+  --color-border-focus:    var(--color-accent-300);
+
+  /* Statuts */
+  --color-text-success:    var(--color-accent-300);
+  --color-bg-success:      var(--color-accent-900);
+
+  /* Composants */
+  --color-card:            var(--color-neutral-800);
+  --color-card-hover:      var(--color-neutral-700);
 }
