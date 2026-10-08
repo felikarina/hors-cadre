@@ -7,6 +7,7 @@
   --color-action-primary-hover: var(--color-brand-700);
   --color-text-on-action: var(--color-neutral-0);
   --color-border-focus: var(--color-brand-600);
+  --color-text-danger: var(--color-red-600);
   /* TODO étape 2 : text-inverse, bg-subtle, bg-danger, border-default… */
 }
 

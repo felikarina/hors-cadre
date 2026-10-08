@@ -1,0 +1,39 @@
+/* Test de vérité : ce fichier ne doit contenir AUCUNE primitive. */
+.button {
+  --button-bg: var(--color-action-primary);
+  --button-bg-hover: var(--color-action-primary-hover);
+  --button-fg: var(--color-text-on-action);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-block-size: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--button-bg);
+  border-radius: var(--radius-md);
+  background: var(--button-bg);
+  color: var(--button-fg);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--duration-base), border-color var(--duration-base);
+}
+
+.button:hover:not(:disabled) {
+  --button-bg: var(--button-bg-hover);
+}
+
+.button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.button--secondary {
+  --button-fg: var(--color-action-primary);
+  background: transparent;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
