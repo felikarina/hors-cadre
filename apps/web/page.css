@@ -1,0 +1,20 @@
+/* La MAISON : la mise en page de la page se décide avec une media query.
+   Les MEUBLES (les Cards) s'adaptent tout seuls à la pièce. */
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  color: var(--color-text-default);
+  background: var(--color-bg-subtle);
+}
+.site-header, .layout { padding-inline: var(--space-4); }
+.layout {
+  display: grid;
+  gap: var(--space-8);
+  max-inline-size: 80rem;
+  margin-inline: auto;
+  padding-block-end: var(--space-8);
+}
+@media (width >= 64rem) {
+  .layout { grid-template-columns: 1fr 20rem; }
+}
+#une { margin-block-end: var(--space-8); }

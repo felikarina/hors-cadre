@@ -1,0 +1,10 @@
+{
+  "name": "design-system",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "storybook": "npm run storybook -w @ds/ui",
+    "dev": "npm run dev -w @ds/web"
+  }
+}
