@@ -1,0 +1,9 @@
+/* ============================================================
+   Card — le point de départ.
+   Tout le design de la Card se construit pendant le tuto 5.
+   ============================================================ */
+
+.card {
+  position: relative; /* servira au lien étendu (étape 6) */
+  display: grid;      /* l'intérieur de la Card prendra toute la hauteur */
+}

@@ -1,0 +1,8 @@
+/* ============================================================
+   CardGrid — le point de départ.
+   La grille se construit à l'étape 8 du tuto 5.
+   ============================================================ */
+
+.card-grid {
+  display: grid;
+}

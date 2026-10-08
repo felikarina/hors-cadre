@@ -1,0 +1,51 @@
+/* ============================================================
+   Le style du LABO — pas du design system.
+   Il sert seulement à dessiner les « pièces » où l'on pose les composants.
+   Ce fichier n'est jamais mis en ligne : valeurs en dur autorisées ici.
+   ============================================================ */
+
+body {
+  margin: 0;
+  padding: 16px 24px 48px;
+  font-family: system-ui, sans-serif;
+  color: #171a21;
+  background: #f5f6f8;
+}
+
+h1 { margin: 0 0 4px; }
+.intro { margin: 0 0 32px; color: #3f4451; }
+
+/* Une pièce = un cadre de largeur fixe, avec son nom au-dessus */
+.piece {
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
+.piece h2 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #3f4451;
+}
+
+.piece--18 { width: 18rem; }
+.piece--38 { width: 38rem; }
+.piece--54 { width: 54rem; }
+
+/* La pièce qu'on redimensionne à la souris (poignée en bas à droite) */
+.piece--resize {
+  width: 22rem;
+  min-width: 15rem;
+  padding: 16px;
+  border: 2px dashed #9aa3b5;
+  resize: horizontal;
+  overflow: auto;
+}
+
+/* Le panneau de réglages du labo de la grille */
+.reglages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}

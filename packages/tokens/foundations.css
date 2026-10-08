@@ -14,8 +14,21 @@
   --radius-md: 8px;
   --focus-ring-width: 3px;
   --duration-base: 250ms;
+
+  /* Séance 3 — pour la Card */
+  --font-size-100: 0.875rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --radius-lg: 16px;
+  --shadow-raised: 0 4px 16px rgb(23 26 33 / 0.12);
+  --motion-lift: -2px; /* de combien la Card se soulève au survol */
 }
 
+/* La préférence « réduire les animations » est réglée UNE fois, ici.
+   Tous les composants qui utilisent ces tokens la respectent. */
 @media (prefers-reduced-motion: reduce) {
-  :root { --duration-base: 0ms; }
+  :root {
+    --duration-base: 0ms;
+    --motion-lift: 0px;
+  }
 }

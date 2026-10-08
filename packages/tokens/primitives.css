@@ -12,4 +12,9 @@
 
   /* TODO : statuts (succès, alerte, erreur, info) */
   --color-red-600: #c62828;
+
+  /* Séance 3 — pour la Card */
+  --color-brand-50: #eef2fd;
+  --color-neutral-50: #f5f6f8;
+  --color-neutral-200: #d9dce3;
 }

@@ -9,6 +9,12 @@
   --color-border-focus: var(--color-brand-600);
   --color-text-danger: var(--color-red-600);
   /* TODO étape 2 : text-inverse, bg-subtle, bg-danger, border-default… */
+
+  /* Séance 3 — pour la Card */
+  --color-bg-subtle: var(--color-neutral-50);
+  --color-bg-accent: var(--color-brand-50);
+  --color-border-default: var(--color-neutral-200);
+  --color-text-accent: var(--color-brand-700);
 }
 
 /* TODO étape 6 : thème sombre — on ne redéfinit QUE les sémantiques */
