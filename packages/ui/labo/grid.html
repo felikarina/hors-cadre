@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Labo — CardGrid</title>
+</head>
+<body>
+  <p><a href="./index.html">← Retour au labo</a></p>
+  <h1>Labo · CardGrid</h1>
+  <p class="intro">Six Cards dans une grille. Changez la largeur de la pièce et regardez les colonnes.</p>
+
+  <div class="reglages">
+    <p>
+      <label for="largeur">Largeur de la pièce (rem)</label>
+      <input id="largeur" type="range" min="16" max="80" value="70">
+      <output id="valeur" for="largeur">70</output>
+    </p>
+    <p>
+      <input id="aligne" type="checkbox">
+      <label for="aligne">Grille alignée (étape 9)</label>
+    </p>
+  </div>
+
+  <div class="piece" id="piece"></div>
+
+  <script type="module" src="./grid.js"></script>
+</body>
+</html>

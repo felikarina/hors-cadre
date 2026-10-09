@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "storybook": "npm run storybook -w @ds/ui",
-    "dev": "npm run dev -w @ds/web"
+    "dev": "npm run dev -w @ds/web",
+    "labo": "npm run labo -w @ds/ui"
   }
 }
