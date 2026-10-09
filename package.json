@@ -7,6 +7,7 @@
     "apps/*"
   ],
   "scripts": {
-    "storybook": "npm run storybook -w @ds/ui"
+    "storybook": "npm run storybook -w @ds/ui",
+    "dev": "npm run dev -w @ds/web"
   }
 }

@@ -1,10 +1,38 @@
 /* Test de vérité : ce fichier ne doit contenir AUCUNE primitive. */
 .button {
   --button-bg: var(--color-action-primary);
+  --button-bg-hover: var(--color-action-primary-hover);
   --button-fg: var(--color-text-on-action);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: var(--size-control-min);
+  padding-inline: var(--button-padding-inline);
+  border: var(--button-border-width) solid transparent;
+  border-radius: var(--button-border-radius);
   background: var(--button-bg);
   color: var(--button-fg);
-  /* TODO étape 6 : padding, min-block-size 44 px, bordure, rayon, font */
+  font: inherit;
+  font-weight: var(--button-font-weight);
+  cursor: pointer;
+  transition: background-color var(--button-transition-duration) ease;
 }
 
-/* TODO : :hover, :focus-visible, [disabled] */
+.button--secondary {
+  --button-bg: var(--color-action-secondary);
+  --button-bg-hover: var(--color-action-secondary-hover);
+}
+
+.button:hover:not(:disabled) {
+  background: var(--button-bg-hover);
+}
+
+.button:focus-visible {
+  outline: var(--focus-indicator-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-indicator-offset);
+}
+
+.button:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
