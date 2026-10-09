@@ -2,8 +2,167 @@
    Card — le point de départ.
    Tout le design de la Card se construit pendant le tuto 5.
    ============================================================ */
+@layer ds.base, ds.components, ds.utilities;
 
-.card {
-  position: relative; /* servira au lien étendu (étape 6) */
-  display: grid;      /* l'intérieur de la Card prendra toute la hauteur */
+@layer ds.components {
+  .card {
+    position: relative; /* servira au lien étendu (étape 6) */
+    display: grid;      /* l'intérieur de la Card prendra toute la hauteur */
+    container: card / inline-size;
+    --card-padding: clamp(var(--space-4), 6cqi, var(--space-6));
+    --card-radius: var(--radius-lg);
+    --card-bg: var(--color-bg-default);
+    --card-border: var(--color-border-default);
+  }
+
+  .card__inner {
+    overflow: hidden;
+    padding-bottom: var(--card-padding);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    color: var(--color-text-default);
+    font-family: var(--font-family-base);
+  }
+
+  .card__inner > :not(.card__media) {
+    padding-left: var(--card-padding);
+    padding-right: var(--card-padding);
+  }
+
+  .card__media {
+    margin: 0;                         /* une <figure> a une marge par défaut */
+    background: var(--color-bg-accent);
+  }
+
+  .card__media img {
+    display: block;                    /* supprime le petit espace sous l'image */
+    width: 100%;                       /* l'image prend la largeur de la Card, quelle qu'elle soit et la remplit sans être déformée*/
+    height: 100%;
+    object-fit: cover;  
+    aspect-ratio: 16 / 9;               
+  }
+
+  .card__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-2);
+  }
+
+  .card__tag {
+    order: -1;
+    margin: 0;
+    color: var(--color-text-accent);
+    font-size: var(--font-size-100);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .card__title {
+    margin: 0;
+    line-height: 1.2;
+    font-size: clamp(1.125rem, 0.75rem + 3cqi, 1.75rem);
+    text-wrap: balance;
+  }
+
+  .card__link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* 2.4 — Le texte et le pied */
+  .card__text {
+    padding-top: var(--card-padding);
+    margin: 0;
+    color: var(--color-text-subtle);
+    line-height: var(--line-height-body);
+    text-wrap: pretty;
+  }
+
+  .card__footer {
+    display: flex;
+    flex-wrap: wrap;                   /* le bouton passe à la ligne s'il manque de place */
+    align-items: center;
+    justify-content: space-between;    /* les infos à gauche, le bouton à droite */
+    gap: var(--space-2) var(--space-4);
+    padding-top: var(--space-4);
+  }
+
+  .card__meta {
+    margin: 0;
+    color: var(--color-text-subtle);
+    font-size: var(--font-size-100);
+  }
+
+  /* 2.5 — La grille de la Card : 4 rangées */
+  .card__inner {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .card__media  { grid-row: 1; }   /* l'image, en haut */
+  .card__header { grid-row: 2; }   /* l'en-tête */
+  .card__text   { grid-row: 3; }   /* le texte : la rangée « 1fr » prend la place qui reste */
+  .card__footer { grid-row: 4; }   /* le pied, toujours en bas */
+
+  @container card (width >= 34rem) {
+    .card__inner:has(.card__media) {
+      grid-template-columns: minmax(10rem, 2fr) 3fr;
+      grid-template-rows: auto 1fr auto;
+      padding-bottom: 0;
+
+      & > .card__media { grid-column: 1; grid-row: 1 / -1; aspect-ratio: auto; }
+      & > :not(.card__media) { grid-column: 2; }
+      & > .card__header { grid-row: 1; padding-top: var(--card-padding); }
+      & > .card__text { grid-row: 2; }
+      & > .card__footer { grid-row: 3; padding-bottom: var(--card-padding); }
+    }
+  }
+
+  /* Sans image, l'en-tête reprend une marge en haut */
+  .cardinner:not(:has(.card__media)) > .card__header {
+    padding-top: var(--card-padding);
+  }
+
+  /* Toute la Card est cliquable, avec un seul lien dans le HTML */
+  .card__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* Le bouton passe au-dessus du lien étendu */
+  .card__footer .button {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* La Card entière réagit au survol et au focus de son lien */
+  .card:has(.card__link:hover) .card__inner {
+    box-shadow: var(--shadow-raised);
+    translate: 0 var(--motion-lift);
+  }
+
+  .card:has(.card__link:focus-visible) .card__inner {
+    outline: var(--focus-ring-width) solid var(--color-border-focus);
+    outline-offset: 2px;
+  }
+
+  /* On ne retire le focus du lien que si le navigateur sait l'afficher sur la Card */
+  @supports selector(:has()) {
+    .card__link:focus-visible {
+      outline: none;
+    }
+  }
+  
+  @container card (width >= 50rem) {
+    .card__text {
+      font-size: 1.125rem;
+      max-width: 60ch;
+    }
+  }
 }

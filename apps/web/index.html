@@ -9,13 +9,22 @@
   <header class="site-header">
     <p class="site-name">Mon projet</p>
   </header>
-  <main class="page">
-    <h1>Bienvenue</h1>
-    <p>Cette page utilise les composants du design system, importés depuis <code>@ds/ui</code>.</p>
-    <form class="signup" id="signup" aria-labelledby="signup-title">
-      <h2 id="signup-title">Créer un compte</h2>
-    </form>
-  </main>
+  <div class="layout">
+    <main class="page">
+      <h1>Les ateliers du quartier</h1>
+      <h2>À la une</h2>
+      <div class="une" id="une"></div>
+      <h2>Tous les ateliers</h2>
+      <div id="grille"></div>
+    </main>
+    <aside class="aside" aria-labelledby="aside-title">
+      <h2 id="aside-title">Près de chez vous</h2>
+      <div id="proche"></div>
+      <form class="signup" id="signup" aria-labelledby="signup-title">
+        <h2 id="signup-title">Créer un compte</h2>
+      </form>
+    </aside>
+  </div>
   <script type="module" src="./main.js"></script>
 </body>
 </html>

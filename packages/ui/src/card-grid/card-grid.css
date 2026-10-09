@@ -1,8 +1,46 @@
-/* ============================================================
-   CardGrid — le point de départ.
-   La grille se construit à l'étape 8 du tuto 5.
-   ============================================================ */
+/* CardGrid — une grille qui calcule elle-même son nombre de colonnes. Zéro media query. */
+@layer ds.base, ds.components, ds.utilities;
 
-.card-grid {
-  display: grid;
+@layer ds.components {
+  /* La liste devient une grille, sans puces ni marges */
+  .card-grid {
+    display: grid;
+    gap: var(--space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Chaque case étire sa Card : toutes les Cards d'une rangée ont la même hauteur */
+  .card-grid > li {
+    display: grid;
+  }
+}
+
+/* Étape 8 — les colonnes */
+@layer ds.components {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  }
+}
+
+
+/* Étape 9 — la variante alignée : subgrid */
+@layer ds.components {
+  .card-grid--aligned > li,
+  .card-grid--aligned .card,
+  .card-grid--aligned .card__inner {
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+
+  .card-grid--aligned .card {
+    container-type: normal; /* le prix à payer : voir plus bas */
+    --card-padding: var(--space-4);
+  }
+
+  .card-grid--aligned .card__title {
+    font-size: 1.25rem;
+  }
 }
