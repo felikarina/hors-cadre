@@ -1,0 +1,46 @@
+/* CardGrid — une grille SANS media query.
+   auto-fill + minmax() : la grille calcule elle-même combien
+   de colonnes tiennent. */
+@layer ds.base, ds.components, ds.utilities;
+
+@layer ds.components {
+  .card-grid {
+    display: grid;
+    /* min(100%, 17rem) : jamais de débordement sous 17rem d'écran */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: var(--space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    /* Chaque case étire sa Card : toutes les Cards d'une rangée
+       ont la même hauteur, le pied de carte reste en bas. */
+    & > li {
+      display: grid;
+    }
+  }
+
+  /* Palier 5 — variante « alignée » : subgrid.
+     Chaque niveau (li > .card > .card__inner) emprunte les 4 rangées
+     de la grille parente : titres, textes et boutons s'alignent.
+
+     ⚠ Le prix à payer : un CONTENEUR (container-type) est isolé de
+     sa grille parente, il ne peut pas transmettre un subgrid.
+     On retire donc le conteneur : les Cards restent verticales
+     et ne s'adaptent plus seules. C'est un choix d'API, pas un bug. */
+  .card-grid--aligned {
+    & > li,
+    & .card,
+    & .card__inner {
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+    }
+
+    & .card {
+      container-type: normal;
+      --card-padding: var(--space-4);
+      --card-title-size: 1.25rem;
+    }
+  }
+}

@@ -4,16 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mon projet — accueil</title>
+  <link rel="stylesheet" href="./page.css">
 </head>
 <body>
-  <header class="site-header">
-    <p class="site-name">Mon projet</p>
-  </header>
-  <main class="page">
-    <h1>Bienvenue</h1>
-    <p>Cette page utilise les composants du design system, importés depuis <code>@ds/ui</code>.</p>
-    <div class="actions" id="actions"></div>
-  </main>
+  <header class="site-header"><h1>Mon projet</h1></header>
+  <div class="layout">
+    <main>
+      <h2>À la une</h2>
+      <div id="une"></div>
+      <h2>Tous les ateliers</h2>
+      <div id="grille"></div>
+    </main>
+    <aside aria-labelledby="titre-aside">
+      <h2 id="titre-aside">Près de chez vous</h2>
+      <div id="aside"></div>
+    </aside>
+  </div>
   <script type="module" src="./main.js"></script>
 </body>
 </html>
